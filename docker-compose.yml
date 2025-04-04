@@ -1,5 +1,5 @@
 services:
-  event:
+  inova:
     build:
       args:
         user: dockeruser

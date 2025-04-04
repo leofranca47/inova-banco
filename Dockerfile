@@ -1,17 +1,13 @@
-FROM php:8.4-alpine
+FROM php:8.4-apache
 
 ARG user
 ARG uid
-
-RUN apt update -y &&\
-    apt install nano -y &&\
-    apt-get install libldb-dev libldap2-dev  -y gdb build-essential
 
 RUN apt-get update \
     && apt-get install -y git zlib1g-dev libpng-dev \
     &&  apt-get install libcurl4-gnutls-dev libxml2-dev -y\
     && apt-get install libzip-dev -y\
-    && docker-php-ext-install pdo pdo_mysql zip ldap gd curl soap mysqli pcntl
+    && docker-php-ext-install pdo pdo_mysql zip gd curl soap mysqli pcntl
 
 # Instalação da extensão intl
 RUN docker-php-ext-install intl
@@ -39,6 +35,7 @@ RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
 COPY .docker/apache/. /etc/apache2/
+COPY .docker/apache/php.ini /usr/local/etc/php
 
 RUN a2ensite inova
 

@@ -1,0 +1,13 @@
+services:
+  event:
+    build:
+      args:
+        user: dockeruser
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 9090:80
+    volumes:
+      - ./:/var/www/html

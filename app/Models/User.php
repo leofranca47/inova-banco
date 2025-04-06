@@ -24,7 +24,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'cpf_cnpj'
+        'cpf_cnpj',
+        'balance',
+        'user_type_id',
     ];
 
     /**

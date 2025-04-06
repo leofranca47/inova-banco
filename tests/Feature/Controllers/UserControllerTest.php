@@ -43,6 +43,7 @@ class UserControllerTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJson([
+                'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
                 'user_type_id' => $user->user_type_id,
@@ -83,7 +84,7 @@ class UserControllerTest extends TestCase
             'payee' => $retailerUser->id,
         ]);
 
-        $response->assertStatus(200)
+        $response->assertStatus(201)
             ->assertJson(
             [
                 'message' => 'Transferência realizada com sucesso!',

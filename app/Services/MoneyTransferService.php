@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Services;
 
 use App\Adapter\Contracts\BankTranferValidatorAdapterInterface;
+use App\Adapter\NotifyRetailerAdapter;
+use App\Jobs\NotifyRetailerJob;
 use App\Models\User;
 use App\Services\DTOs\TransferDto;
 
@@ -49,6 +51,9 @@ class MoneyTransferService
         $userSend->save();
         $userReceive->save();
 
+        if ($userReceive->user_type_id === User::RETAILER) {
+            NotifyRetailerJob::dispatch();
+        }
         return [
             'success' => true,
             'message' => 'Transferência realizada com sucesso!',

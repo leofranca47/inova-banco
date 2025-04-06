@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     /**
      * @OA\Post (
-     *     path="/user",
+     *     path="/api/user",
      *     tags={"Usuários"},
      *     @OA\RequestBody(
      *         @OA\MediaType(
@@ -49,7 +49,10 @@ class UserController extends Controller
      *                 example={
      *                     "name":"leofranca",
      *                     "email":"leo@email.com",
-     *                     "password":"123456"
+     *                     "password":"123456",
+     *                     "user_type_id": 1,
+     *                     "balance":"100.00",
+     *                     "cpf_cnpj":"12345678901"
      *                }
      *             )
      *         )
@@ -89,7 +92,7 @@ class UserController extends Controller
 
     /**
      * @OA\Get (
-     *     path="/user/{id}",
+     *     path="/api/user/{id}",
      *     tags={"Usuários"},
      *     @OA\Parameter(
      *         in="path",
@@ -131,7 +134,7 @@ class UserController extends Controller
 
     /**
      * @OA\Post (
-     *     path="/user/transfer",
+     *     path="/api/user/transfer",
      *     tags={"Usuários"},
      *     @OA\RequestBody(
      *         @OA\MediaType(

@@ -6,12 +6,12 @@
         "version": "1.0"
     },
     "paths": {
-        "/user": {
+        "/api/user": {
             "post": {
                 "tags": [
                     "Usuários"
                 ],
-                "operationId": "fdaf6e20ea63c9e43bacb0c1f25012d5",
+                "operationId": "7c2f70a3743c58ead609cd340889444b",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -45,7 +45,10 @@
                                 "example": {
                                     "name": "leofranca",
                                     "email": "leo@email.com",
-                                    "password": "123456"
+                                    "password": "123456",
+                                    "user_type_id": 1,
+                                    "balance": "100.00",
+                                    "cpf_cnpj": "12345678901"
                                 }
                             }
                         }
@@ -103,12 +106,12 @@
                 }
             }
         },
-        "/user/{id}": {
+        "/api/user/{id}": {
             "get": {
                 "tags": [
                     "Usuários"
                 ],
-                "operationId": "1ec60d4ee968175164a94c21f897f8ea",
+                "operationId": "d8f696420bea235f4916124c9ba1c507",
                 "parameters": [
                     {
                         "name": "id",
@@ -159,12 +162,12 @@
                 }
             }
         },
-        "/user/transfer": {
+        "/api/user/transfer": {
             "post": {
                 "tags": [
                     "Usuários"
                 ],
-                "operationId": "2beda4ceaeaaffd5cb0ee38da312b179",
+                "operationId": "6c164044624d57323fad76fba2a57400",
                 "requestBody": {
                     "content": {
                         "application/json": {

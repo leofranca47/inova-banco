@@ -22,4 +22,11 @@ class UserCreateRequest extends FormRequest
     {
         return true;
     }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'cpf_cnpj' => preg_replace("/\D/", "", $this->cpf_cnpj),
+        ]);
+    }
 }

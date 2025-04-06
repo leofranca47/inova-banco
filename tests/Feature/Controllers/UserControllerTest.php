@@ -18,7 +18,7 @@ class UserControllerTest extends TestCase
             'password' => '123456',
             'user_type_id' => User::USER,
             'balance' => 50.2,
-            'cpf_cnpj' => '12345678901',
+            'cpf_cnpj' => '15580042035',
         ]);
 
         $response->assertStatus(201)
@@ -27,14 +27,14 @@ class UserControllerTest extends TestCase
                 'email' => 'Wl6o9@example.com',
                 'user_type_id' => User::USER,
                 'balance' => 50.2,
-                'cpf_cnpj' => '12345678901',
+                'cpf_cnpj' => '15580042035',
             ]);
     }
 
     public function testDeveriaBuscarUsuario(): void
     {
         $user = User::factory()->create([
-            'cpf_cnpj' => '91923466003',
+            'cpf_cnpj' => '50221161031',
             'user_type_id' => User::USER,
             'balance' => 90,
         ]);
@@ -67,13 +67,13 @@ class UserControllerTest extends TestCase
         );
 
         $user = User::factory()->create([
-            'cpf_cnpj' => '13717602098',
+            'cpf_cnpj' => '24327611034',
             'user_type_id' => User::USER,
             'balance' => 100,
         ]);
 
         $retailerUser = User::factory()->create([
-            'cpf_cnpj' => '57649769000152',
+            'cpf_cnpj' => '31213351000104',
             'user_type_id' => User::RETAILER,
             'balance' => 0,
         ]);

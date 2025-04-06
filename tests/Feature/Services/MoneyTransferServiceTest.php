@@ -30,19 +30,19 @@ class MoneyTransferServiceTest extends TestCase
         );
 
         $user = User::factory()->create([
-            'cpf_cnpj' => '13717602098',
+            'cpf_cnpj' => '36372760037',
             'user_type_id' => self::USUARIO,
             'balance' => 100,
         ]);
 
         $userTwo = User::factory()->create([
-            'cpf_cnpj' => '91923466003',
+            'cpf_cnpj' => '76740065063',
             'user_type_id' => self::USUARIO,
             'balance' => 90,
         ]);
 
         $retailerUser = User::factory()->create([
-            'cpf_cnpj' => '57649769000152',
+            'cpf_cnpj' => '39084289000100',
             'user_type_id' => self::LOJISTA,
             'balance' => 0,
         ]);
@@ -101,13 +101,13 @@ class MoneyTransferServiceTest extends TestCase
     public function testLojistasDeveriamApenasReceberDinheiro(): void
     {
         $user = User::factory()->create([
-            'cpf_cnpj' => '91923466003',
+            'cpf_cnpj' => '63078148025',
             'user_type_id' => self::USUARIO,
             'balance' => 90,
         ]);
 
         $retailerUser = User::factory()->create([
-            'cpf_cnpj' => '57649769000152',
+            'cpf_cnpj' => '86423324000158',
             'user_type_id' => self::LOJISTA,
             'balance' => 0,
         ]);
@@ -131,13 +131,13 @@ class MoneyTransferServiceTest extends TestCase
     public function testDeveriaValidarSeUsuariosTemSaldoAntesDeTransferir(): void
     {
         $user = User::factory()->create([
-            'cpf_cnpj' => '91923466003',
+            'cpf_cnpj' => '57674126005',
             'user_type_id' => self::USUARIO,
             'balance' => 90,
         ]);
 
         $retailerUser = User::factory()->create([
-            'cpf_cnpj' => '57649769000152',
+            'cpf_cnpj' => '13461691000172',
             'user_type_id' => self::LOJISTA,
             'balance' => 0,
         ]);
@@ -174,13 +174,13 @@ class MoneyTransferServiceTest extends TestCase
         );
 
         $user = User::factory()->create([
-            'cpf_cnpj' => '91923466003',
+            'cpf_cnpj' => '71192018087',
             'user_type_id' => self::USUARIO,
             'balance' => 90,
         ]);
 
         $retailerUser = User::factory()->create([
-            'cpf_cnpj' => '57649769000152',
+            'cpf_cnpj' => '44007216000154',
             'user_type_id' => self::LOJISTA,
             'balance' => 0,
         ]);

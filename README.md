@@ -1,6 +1,6 @@
 ## INOVA BANCO
 ### Executando o Projeto
-* Para executar o projeto, basta executar o comando `docker-compose up -d`
+* Para executar o projeto, basta executar o comando `docker compose up -d`
 * Para criar as tabelas da api execute o comando `docker compose exec inova php artisan migrate`
 * Para adicionar os tipos de usuários execute o comando `docker compose exec inova php artisan db:seed`
 * Foi configurado o endereço `inova.test` adicione no arquivo `hosts` apontando para o ip `127.0.0.1`
